@@ -28,16 +28,16 @@ public class CurrencyConversion {
 
         for (int i = 0; i < rowCount; i++) {
 
-            System.out.printf("%3d. %-4s ", i + 1, currencies.get(i));
+            System.out.printf("%3d. %-4s", i + 1, currencies.get(i));
 
             if (i + rowCount < currencies.size()) {
-                System.out.printf("%3d. %-4s ", i + rowCount + 1, currencies.get(i));
+                System.out.printf("%3d. %-4s", i + rowCount + 1, currencies.get(i));
             } else {
                 System.out.println(" ");
             }
 
             if (i + 2 * rowCount < currencies.size()) {
-                System.out.printf("%3d. %-4s %n", i + 2 * rowCount + 1, currencies.get(i));
+                System.out.printf("%3d. %-4s%n", i + 2 * rowCount + 1, currencies.get(i));
             } else {
                 System.out.println(" ");
             }
@@ -57,6 +57,7 @@ public class CurrencyConversion {
 
         while (true) {
             try {
+//                check for another scanner type
                 int index = Integer.parseInt(scanner.nextLine());
 
                 if (index >= 1 && index <= currencies.size()) {
