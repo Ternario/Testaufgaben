@@ -57,7 +57,6 @@ public class CurrencyConversion {
 
         while (true) {
             try {
-//                check for another scanner type
                 int index = Integer.parseInt(scanner.nextLine());
 
                 if (index >= 1 && index <= currencies.size()) {
