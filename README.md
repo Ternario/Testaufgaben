@@ -91,7 +91,7 @@
 
 4. Zeitaufwand für die Fertigstellung:
 
-    - Die Gesamtzeit für die Erledigung aller Aufgaben betrug etwa 24 - 25 Stunden, die sich wie folgt verteilen:
+    - Die Gesamtzeit für die Erledigung aller Aufgaben betrug etwa 25 - 26 Stunden, die sich wie folgt verteilen:
 
           - Die Grundlagen der Information: 3 Stunden.
           - Erste Aufgabe: 3.5 - 4 Stunden.
