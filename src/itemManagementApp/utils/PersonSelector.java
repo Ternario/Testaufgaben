@@ -5,6 +5,7 @@ import itemManagementApp.models.Person;
 import java.util.List;
 import java.util.Scanner;
 
+//  Eine Hilfsklasse wird erstellt, um die vom Benutzer eingegebenen Daten für die Persona-Auswahl zu verarbeiten.
 public class PersonSelector {
     private final Scanner scanner;
 
@@ -12,6 +13,7 @@ public class PersonSelector {
         this.scanner = scanner;
     }
 
+    //  Funktion (Klassenmethode) zur Verarbeitung der ausgewählten Person nach Index oder vollständigem Namen.
     public Person selectPerson(List<Person> persons, boolean checkItems) {
         String emptyObjectsInfoText = "Dieser Mensch hat keine Gegenstände, wählen Sie einen anderen.";
 

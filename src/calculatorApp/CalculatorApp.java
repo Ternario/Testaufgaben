@@ -13,6 +13,8 @@ public class CalculatorApp {
         InputOutputHelper inpOutHelper = new InputOutputHelper();
         MathOperations mathOperations = new MathOperations(inpOutHelper);
 
+        //  Es wird ein Wörterbuch (Hash-Tabelle) mit den Schlüsseln - Berechnungsnummer und
+        //  Wert - Berechnungsname erstellt.
         Map<Integer, String> availableOperations = new HashMap<>();
         {
             availableOperations.put(1, "Addition (+)");
@@ -22,7 +24,8 @@ public class CalculatorApp {
             availableOperations.put(5, "Modulo (%)");
             availableOperations.put(6, "Exponential (^)");
         }
-
+        //  Es wird eine zusätzliche Liste von Schlüsseln erstellt, um zu verhindern,
+        //  dass Informationen in falscher Reihenfolge ausgegeben werden.
         List<Integer> keys = new ArrayList<>(availableOperations.keySet());
         Collections.sort(keys);
 
@@ -31,7 +34,8 @@ public class CalculatorApp {
         while (isContinueFlag) {
             double firstNumb = inpOutHelper.inputDouble("Geben Sie die erste Zahl ein: ");
 
-            int operator = inpOutHelper.inputInteger("Wählen Sie einen der verfügbaren Vorgänge: 1 - " + keys.size(), keys, availableOperations);
+            int operator = inpOutHelper.inputInteger("Wählen Sie einen der verfügbaren Vorgänge: 1 - " +
+                    keys.size(), keys, availableOperations);
 
             double secondNumb = inpOutHelper.inputDouble("Geben Sie die zweite Zahl ein: ");
 
@@ -45,6 +49,8 @@ public class CalculatorApp {
         inpOutHelper.close();
     }
 
+    //  Eine Funktion (Klassenmethode) zur Verarbeitung und Feststellung,
+    //  welche mathematische Operation ausgewählt wurde, und zur Übertragung der eingegebenen Werte.
     private double calculate(double firstNumb, double secondNumb, int operator, MathOperations mathOperations) {
         switch (operator) {
             case 1:

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+//  Es wird eine Klasse erstellt, die die Anwendungszustände und -daten speichert.
 public class AppState {
     private final Scanner scanner = new Scanner(System.in);
     private int transfersCounter = 0;

@@ -1,5 +1,6 @@
 package calculatorApp;
 
+//  Eine Klasse mit verfügbaren mathematischen Operationen wird erstellt.
 public class MathOperations {
     private final InputOutputHelper inpOutHelper;
 

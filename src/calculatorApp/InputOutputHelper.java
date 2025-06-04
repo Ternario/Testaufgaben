@@ -4,9 +4,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+//  Es wird eine Hilfsklasse erstellt, in der Methoden zur Verarbeitung von Eingabe- und Ausgabewerten
+//  sowie zur Beendigung des Programms definiert werden.
 public class InputOutputHelper {
     private final Scanner scanner = new Scanner(System.in);
 
+    //  Funktion (Klassenmethode) zur Verarbeitung von Eingabewerten (Zahlen).
     public double inputDouble(String infoText) {
         System.out.println(infoText);
         while (true) {
@@ -19,6 +22,7 @@ public class InputOutputHelper {
         }
     }
 
+    //  Funktion (Klassenmethode) zur Verarbeitung der vom Benutzer eingegebenen Nummer der mathematischen Operation.
     public int inputInteger(String infoText, List<Integer> keys, Map<Integer, String> availableOperations) {
         System.out.println(infoText);
 
@@ -31,7 +35,8 @@ public class InputOutputHelper {
                 int number = Integer.parseInt(scanner.nextLine());
 
                 if (number <= 0 || number > keys.size()) {
-                    throw new IllegalArgumentException("Der ausgewählte Vorgang existiert nicht oder ist nicht vorhanden.");
+                    throw new IllegalArgumentException("Der ausgewählte Vorgang existiert nicht " +
+                            "oder ist nicht vorhanden.");
                 }
 
                 return number;
@@ -46,6 +51,7 @@ public class InputOutputHelper {
         }
     }
 
+    //  Funktion (Klassenmethode) für eine schönere Ausgabe von Ganzzahlen.
     public void result(double result) {
         if (result == (long) result) {
             System.out.println("Ergebnis: " + (long) result);
@@ -54,6 +60,7 @@ public class InputOutputHelper {
         }
     }
 
+    //  Eine Funktion (Klassenmethode) zur Fortsetzung oder Beendigung des Programms.
     public boolean isContinue(String text) {
         System.out.println(text);
         String answer = scanner.nextLine();

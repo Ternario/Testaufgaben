@@ -5,14 +5,15 @@ import itemManagementApp.models.Person;
 
 import java.util.List;
 
+//  Eine Hilfsklasse wird erstellt, um Informationen in der Konsole zu verarbeiten und anzuzeigen.
 public class DisplayInConsole {
-
     private final List<Person> persons;
 
     public DisplayInConsole(List<Person> persons) {
         this.persons = persons;
     }
 
+    //  Eine Funktion (Klassenmethode) zur Anzeige vollständiger Daten über Personen.
     public void personsInformation() {
         for (Person person : persons) {
             String firstName = person.getFirstName();
@@ -28,6 +29,7 @@ public class DisplayInConsole {
         }
     }
 
+    //  Eine Funktion (Klassenmethode) zur Anzeige der Verteilung von Objekten (Dingen) auf Personen.
     public void objectsDistribution() {
         String formatWithNamePattern = "%-22s %s%n";
         String weightInfoPattern = "Gesamtgewicht: %.2f kg%n";

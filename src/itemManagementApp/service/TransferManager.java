@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+//  Es wird eine Klasse eingerichtet, um den Vorgang der Umverteilung von Artikeln zu bearbeiten,
+//  die Anzahl der Umtauschvorgänge zu verfolgen und die Einhaltung der festgelegten Grenzwerte zu überwachen.
 public class TransferManager {
     private final Scanner scanner;
     private final List<Person> persons;
@@ -28,11 +30,14 @@ public class TransferManager {
                 Nummer aus, von der Sie das Objekt verschieben möchten.
                 \s""");
 
+        //  Erhalt der ersten ausgewählten Persona
         Person firstPerson = personSelector.selectPerson(persons, true);
 
+        //  Erstellung einer neuen Liste von Personen, ohne die Person, von der der Gegenstand übertragen wird.
         List<Person> newPersonList = new ArrayList<>(persons);
-
         newPersonList.remove(firstPerson);
+
+        //  Ruft eine Liste mit den Items der ausgewählten Persona ab.
         List<Items> items = firstPerson.getItems();
 
         int itemIndex;
@@ -76,16 +81,18 @@ public class TransferManager {
                     Nummer aus, zu der Sie das Objekt verschieben möchten.
                     \s""");
 
+            //  Erhalt der zweiten ausgewählten Persona
             Person secondPerson = personSelector.selectPerson(newPersonList, false);
 
+            //  Abruf eines Elements nach Index
             Items selectedItem = items.get(itemIndex);
-
-            double personTotalWeight = secondPerson.getTotalWeight();
 
             if (secondPerson.getItems().size() >= 5) {
                 System.out.println("Eine Person kann nicht mehr als 5 Gegenstände auf einmal haben.");
                 continue;
             }
+
+            double personTotalWeight = secondPerson.getTotalWeight();
 
             if (personTotalWeight + selectedItem.getWeight() > 10) {
                 System.out.println("Das Gesamtgewicht darf 10 Kilogramm nicht überschreiten.");

@@ -5,6 +5,8 @@ import itemManagementApp.service.TransferManager;
 
 import java.util.Scanner;
 
+//  Die Hauptklasse (Assembly Class) wird erstellt,
+//  in der das Hauptmenü angezeigt wird und die ausgewählten Anfragen bearbeitet und verteilt werden.
 public class Menu {
     private final AppState appState = new AppState();
     private final Scanner scanner = appState.getScanner();
@@ -18,11 +20,13 @@ public class Menu {
         String exitInfoString = "Beenden der Arbeit.";
 
         String numberInputErrorText = "Ungültige Nummer.";
-        String emptyInputErrorText = "Feld kann nicht leer sein.";
+        String emptyInputErrorText = "Es können nur Zahlen eingegeben werden, und das Feld darf nicht leer sein.";
 
         boolean isContinueAppFlag = true;
 
         while (isContinueAppFlag) {
+            //  Wenn die Anzahl der Austausche gleich der Zahl 6 wird,
+            //  wird die Umverteilungsfunktion aus dem Menü entfernt.
             if (appState.getTransfersCounter() >= 6) {
                 System.out.println("Sie haben Ihr Limit für die Übertragung von Artikeln erreicht.");
                 System.out.println(firstIfoString);

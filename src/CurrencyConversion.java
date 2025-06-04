@@ -6,6 +6,8 @@ public class CurrencyConversion {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        // Es wird ein Wörterbuch (Hash-Tabelle) erstellt,
+        // in dem der Schlüssel der Währungsname und der Wert der Wechselkurs ist.
         Map<String, Double> exchangeRates = new HashMap<>();
 
         exchangeRates.put("USD", 0.85);
@@ -19,13 +21,17 @@ public class CurrencyConversion {
         exchangeRates.put("PLN", 4.93);
         exchangeRates.put("CZK", 24.39);
 
+        //  Es wird eine Liste von Wörterbuchschlüsseln erstellt, um den Index und den Währungsnamen anzuzeigen.
         List<String> currencies = new ArrayList<>(exchangeRates.keySet());
 
         System.out.println("Verfügbare Währungen: ");
 
+        //  Die Felder columnCount und rowCount wurden hinzugefügt,
+        //  um die Liste der verfügbaren Währungen kompakter und bequemer anzuzeigen.
         int columnCount = 3;
         int rowCount = (currencies.size() + columnCount - 1) / columnCount;
 
+        //  Zeigt eine Liste zur Auswahl der Währung nach Index an.
         for (int i = 0; i < rowCount; i++) {
 
             System.out.printf("%3d. %-4s", i + 1, currencies.get(i));
@@ -52,6 +58,7 @@ public class CurrencyConversion {
         scanner.close();
     }
 
+    //  Funktion zur Verarbeitung des vom Benutzer eingegebenen Wertes (Währungsindex).
     private static String selectCurrency(Scanner scanner, List<String> currencies) {
         System.out.println("Wählen Sie eine Zahl (1 - " + currencies.size() + "): ");
 
@@ -70,6 +77,7 @@ public class CurrencyConversion {
         }
     }
 
+    //  Funktion zur Verarbeitung des vom Benutzer eingegebenen Wertes (Summe/Zahl).
     private static BigDecimal enteredAmount(Scanner scanner) {
         System.out.println("Geben Sie den Betrag in EUR ein: ");
 
@@ -95,6 +103,7 @@ public class CurrencyConversion {
         }
     }
 
+    //  Funktion zur Bearbeitung und Anzeige der Berechnungsergebnisse.
     private static void showResult(String currency, Map<String, Double> exchangeRates, BigDecimal amount) {
         BigDecimal currencyAmount = BigDecimal.valueOf(exchangeRates.get(currency));
         BigDecimal calculatedAmount = amount.multiply(currencyAmount).setScale(2, RoundingMode.HALF_UP);
